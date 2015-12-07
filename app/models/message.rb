@@ -6,13 +6,13 @@ class Message
 
   attr_accessor :name, :email, :content
 
-  validates :name,
+  validates :name, 
     presence: true
 
   validates :email,
     presence: true
 
-  validates :content,
+  validates :content, 
     presence: true
 
 end

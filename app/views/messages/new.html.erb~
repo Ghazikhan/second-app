@@ -1,23 +1,18 @@
 <br>
 
 <%= form_for @message, url: contact_path do |message_form| %>
-  <fieldset>
-    <div class="field">
-      <%= message_form.text_field :name, placeholder: "Name" %>
-    </div>
-    
-    <div class="field">
-      <%= message_form.email_field :email, placeholder: "Email"%>
-    </div>
-    
-    <div class="field">
-      <%= message_form.text_area :content, placeholder: "Message"%>
-    </div>
-  </fieldset>
   
-  <fieldset>
-    <div class="field">
-      <%= message_form.submit "Send" %>
+    <div class="row">
+    <div class="col-md-12">
+      <%= message_form.text_field :name, class: "form-control", placeholder: "Your Name" %>
+  
+      <%= message_form.email_field :email, class: "form-control", placeholder: "Valid Email"%>
+    
+      <%= message_form.text_area :content, class: "form-control", placeholder: "Message"%>
+    
+      <%= message_form.submit "Send" , class: "btn btn-primary" %>
     </div>
-  </fieldset>
+    </div>
+ 
 <% end %>
+
