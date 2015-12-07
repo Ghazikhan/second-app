@@ -1,0 +1,14 @@
+<br>
+<% if user_signed_in? %>
+	<div class="list-group">
+		<span class="list-group-item active">
+			<h4><b>Categories</b></h4>
+			<% Degre.all.each do |degree| %>
+		</span>
+		<span class="list-group-item">
+			<span class="badge"><%= link_to "04", degree, class: "badge" %></span>
+			<%= link_to degree.name_with_type, degree %>
+		</span>
+			<% end %>
+	</div>
+<% end %>

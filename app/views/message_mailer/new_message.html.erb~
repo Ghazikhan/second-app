@@ -1,0 +1,6 @@
+<p>
+  Hi <%= @user.first_name %> <%= @user.last_name %> (<%= @user.email %>)
+</p>
+<p>
+  <%= @message.name %>
+</p>
