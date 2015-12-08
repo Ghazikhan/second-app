@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :userinfos,      dependent: :destroy
   has_many :educations,     dependent: :destroy
   has_many :experiences,    dependent: :destroy
-
+  has_many :comments,       dependent: :destroy
 
   has_attached_file :avatar, :styles => { :medium => "400x400>", :thumb => "100x100>" },
   																				:default_url => "/images/:style/missing.png"

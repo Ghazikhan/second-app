@@ -11,6 +11,7 @@ class AdvertisesController < ApplicationController
   def show
   	@job = Job.new
   	@jobs = Job.all
+    @comment = Comment.new
   end
 
   def new

@@ -1,0 +1,17 @@
+<%= form_for ([@advertise, @advertise.comments.build]) do |f| %>
+  <% if @comment.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.text_area :body, class: "form-control", placeholder: "Say something here..." %>
+
+    <%= f.submit "Comment", class: "btn btn-primary" %>
+
+<% end %>

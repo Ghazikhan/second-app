@@ -1,0 +1,4 @@
+<%= form_for ([@advertise, @advertise.comments.build]) do |f| %>
+  <%= f.text_area :body, class: "form-control", placeholder: "Say something here..." %>
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+<% end %>
