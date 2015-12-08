@@ -3,12 +3,12 @@
 	<div class="list-group">
 		<span class="list-group-item active">
 			<h4><b>Categories</b></h4>
-			<% Degre.all.each do |degree| %>
 		</span>
+		<% Degre.all.each do |degre| %>
 		<span class="list-group-item">
-			<span class="badge"><%= link_to "04", degree, class: "badge" %></span>
-			<%= link_to degree.name_with_type, degree %>
+		<span class="badge">04</span>
+			<%= degre.name_with_type %>
 		</span>
-			<% end %>
+		<% end %>
 	</div>
 <% end %>

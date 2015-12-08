@@ -23,12 +23,12 @@ class AdvertisesController < ApplicationController
   def create
     @advertise = Advertise.new(advertise_params)
 
-    @user = User.find_by_id(params[:user])
+    # @user = User.find_by_id(params[:user])
     respond_to do |format|
       if @advertise.save
-        User.all.each do |user|
-          AdvertiseMailer.adveritse_mail_sending(@advertise, user).deliver!
-        end
+        # User.all.each do |user|
+          # AdvertiseMailer.adveritse_mail_sending(@advertise, user).deliver!
+        # end
         format.html { redirect_to @advertise, notice: 'Advertise was successfully created.' }
         format.json { render :show, status: :created, location: @advertise }
       else

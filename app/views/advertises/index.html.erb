@@ -19,9 +19,5 @@
 
 <br>
 <% if logged_in_admin? %>
-	<div class="panel panel-default">
-	<div class="panel-heading">
-		<%= link_to 'New Advertise', new_advertise_path %>
-	</div>
-	</div>
+	<%= link_to 'New Advertise', new_advertise_path, class: 'btn btn-default' %>
 <% end %>

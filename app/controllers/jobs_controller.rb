@@ -22,8 +22,14 @@ class JobsController < ApplicationController
   def create
   	@advertise = Advertise.find(params[:advertise_id])
     @job = @advertise.jobs.create(job_params)
-
       if @job.save
+        User.all.each do |user|
+          user.educations.each do |edu|
+            if @job.degre.name_with_type == edu.degre.name_with_type
+            JobMailer.job_confirmation(@job, edu.degre.name_with_type, user).deliver!
+            end
+          end
+        end
        	redirect_to @advertise, notice: 'Job was successfully created.'
       else
 				flash[error] = "Some thing is missing...?"
@@ -58,7 +64,7 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:description, :advertise_id, :work_field_id, :organization_id, :degre_id, :city_id)
     end
-    
+
     def admin
     	@user = current_user
      unless current_user && User.find_by(email: "ghazi545@gmail.com") == current_user
