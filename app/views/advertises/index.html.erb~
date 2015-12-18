@@ -1,6 +1,21 @@
+
+<% form_tag advertises_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %> 
+
 <br>
 <% @advertises.each do |advertise| %>
-   <div class="panel panel-default">
+
+
+
+
+
+
+
+	<div class="panel panel-default">
 		<div class="panel-heading">
 		  <h3 class="panel-title"><%= link_to advertise.title, advertise %></h3>
 		</div>

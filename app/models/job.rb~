@@ -1,0 +1,17 @@
+class Job < ActiveRecord::Base
+  belongs_to :advertise
+  belongs_to :work_field
+  belongs_to :organization
+  belongs_to :degre
+  belongs_to :city
+  
+  def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+  
+  
+end

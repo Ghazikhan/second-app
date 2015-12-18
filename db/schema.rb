@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 20151208212748) do
   add_index "comments", ["advertise_id"], name: "index_comments_on_advertise_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "contactus", force: :cascade do |t|
+    t.string   "title"
+    t.string   "email"
+    t.string   "subject"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "degres", force: :cascade do |t|
     t.string   "name"
     t.string   "drege_type"
@@ -89,6 +98,13 @@ ActiveRecord::Schema.define(version: 20151208212748) do
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
   add_index "experiences", ["work_field_id"], name: "index_experiences_on_work_field_id", using: :btree
+
+  create_table "faqs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "institutes", force: :cascade do |t|
     t.string   "name"

@@ -1,4 +1,10 @@
 <% @advertise.jobs.each do |job| %>
+<% form_tag advertises_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %> 
 
 	<div class="panel panel-default">
 		<div class="panel-heading"><strong>Job Title:</strong> <%= job.work_field.field_name %></div>

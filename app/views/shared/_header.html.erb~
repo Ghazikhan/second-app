@@ -11,7 +11,20 @@
 		      <li><%= link_to 'Contact Us', contact_path %></li>
 		      <li><%= link_to 'Jobs', advertises_path %></li>
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right">
+		    
+		    <div class="col-sm-3 col-md-3 pull-right">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+        </div> 
+        
+
+		     <ul class="nav navbar-nav navbar-right">
 		    	<% if user_signed_in? %>
 						<li><%= avatar(@user) %></li>
 						<li><%= link_to "#{@user.first_name} #{@user.last_name}", current_user %></li>
