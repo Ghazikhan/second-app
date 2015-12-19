@@ -1,6 +1,9 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
-		<%= form_for(@user, as: @user, url: registration_path(@user), html: { method: :put }) do |f| %>
+<%= form_for(@user, as: @user, url: registration_path(@user),
+                                                        html: { method: :put }) do |f| %>
+
+      <%= devise_error_messages! %>
 			<%= render 'shared/error_messages', object: f.object %>
 			<div class="row">
 				<div class="col-md-4"><%= avatar2(@user) %></div>

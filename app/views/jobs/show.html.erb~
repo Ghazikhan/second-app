@@ -9,4 +9,4 @@
 	  <li class="list-group-item"><strong>City:</strong> <%= @job.city.name %></li>
 	</ul>
 </div>
-<%= link_to "Back", advertise_path(@advertise), class: "btn btn-default" %>
+<%= link_to "Back", advertise_path(@advertise) %>

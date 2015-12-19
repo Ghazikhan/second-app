@@ -1,6 +1,6 @@
 class Userinfo < ActiveRecord::Base
   belongs_to :user
   validates :mobile, 		presence: true, format: { with: /\A[0-9]+\Z/ }
-  validates_length_of :mobile, maximum: 11
+  validates_length_of :mobile, maximum: 13
   validates :address, 	presence: true
 end

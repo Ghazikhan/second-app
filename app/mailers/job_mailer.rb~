@@ -4,7 +4,7 @@ class JobMailer < ApplicationMailer
     @user = user
     @education = edu
     @job = job
-    #@advertise = :advertise_id
+    @advertise = :advertise_id
     mail to: user.email, subject: "New #{job.work_field.field_name} Job", from: "Pak Apply"
   end
 end

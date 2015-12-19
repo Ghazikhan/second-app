@@ -1,0 +1,8 @@
+<h4>Hi..<%= @user.first_name %></h4>
+
+<p>
+  <%= @job.description %>  
+</p>
+<p>
+  To view complete advertisment <%= link_to "Click Here", advertise_job_url(@advertise, @job) %> and goto website.
+</p>

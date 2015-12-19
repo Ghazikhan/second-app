@@ -24,7 +24,7 @@
  </div>
  <div class="row">
 	 <div class="col-md-4">
-		  <%= f.text_field :mobile, class: "form-control", placeholder: "Mobile no without dash" %>
+		  <%= f.text_field :mobile, class: "form-control", placeholder: "Phone" %>
 		</div>
   </div>
     <%= f.text_area :address, class: "form-control", placeholder: "Address" %>

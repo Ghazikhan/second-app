@@ -3,13 +3,13 @@ class JobsController < ApplicationController
   before_filter :admin
 
   def index
-  @jobs = Job.search(params[:search])
     @jobs = Job.all
     @user = current_user
   end
 
   def show
   	@user = current_user
+  	@advertise = Advertise.find(params[:advertise_id])
   end
 
   def new

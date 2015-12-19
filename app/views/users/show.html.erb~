@@ -15,13 +15,17 @@
 		<span class="thumbnail">
 		  <%= avatar3(@user) %>
 		</span>
-		<% if user_signed_in? %>
-			<%= link_to "Upload Photo", edit_user_registration_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+			<button class="btn btn-primary" type="button" data-toggle="collapse"
+							data-target="#addAvatar" aria-expanded="false" aria-controls="collapseExample">
+				Upload Photo
+			</button>
   	<% end %>
   </div>
 </div>
 <div class="collapse" id="addAvatar">
 	<div class="well">
+		<%= render 'devise/registrations/pic_edit' %>
 	</div>
 </div>
 

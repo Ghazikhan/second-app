@@ -9,6 +9,7 @@ class JobsController < ApplicationController
 
   def show
   	@user = current_user
+  	@advertise = Advertise.find(params[:advertise_id])
   end
 
   def new
